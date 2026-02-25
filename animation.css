@@ -1,0 +1,129 @@
+.autoRotated{
+    animation: autoRotateAnimation;
+    animation-timeline: view()
+}
+
+@keyframes autoRotateAnimation{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(400deg);
+    }
+}
+
+.autoShow{
+    animation: text-appear both ease;
+    animation-timeline: view();
+    animation-range: entry 45% cover 100vh;
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.imageReveal{
+    animation: image-appear both ease;
+    animation-timeline: view(50vh 5%);
+}
+
+@keyframes image-appear {
+    from {
+        filter: saturate(1) contrast(1) brightness(.7) blur(1px);
+        opacity: 0;
+        scale: 0.95;
+        translate: 0 4rem;
+    }
+
+    to {
+        filter: none;
+        opacity: 1;
+        scale: 1;
+        translate: 0 0;
+    }
+}
+
+.fadeUp{
+    animation: fadeUp both;
+    animation-timeline: view();
+}
+
+.timeline-item:nth-child(1) {
+    animation-range: entry 10% cover 50%;
+}
+
+
+.timeline-item:nth-child(2) {
+    animation-range: entry 20% cover 60%;
+}
+
+
+.timeline-item:nth-child(3) {
+    animation-range: entry 30% cover 70%;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.5);
+    }
+
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.autoblur {
+    animation: autoBlurAnimation linear both;
+    animation-timeline: view();
+    animation-timeline: view(50% auto);
+}
+
+
+@keyframes autoBlurAnimation {
+    0% {
+        filter: blur(5px);
+    }
+
+
+    35%,
+    45% {
+        filter: blur(0px);
+    }
+
+
+    70% {
+        filter: blur(5px);
+    }
+
+
+    100% {
+        filter: blur(0px);
+    }
+
+
+}
+
+
+
+
+/* /////////////////////LESSON 7/////////////////////// */
+.horizontal-scroll-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) #1a1a1a;
+}
+/* /////////////////////LESSON 7/////////////////////// */
